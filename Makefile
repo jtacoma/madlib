@@ -1,7 +1,7 @@
 SRCS = $(wildcard src/*/*.c)
 OBJS = $(SRCS:.c=.o)
 CC = clang-3.8
-CFLAGS = -Iinclude -std=c11
+CFLAGS = -Iinclude -std=c11 -g
 
 all: adjnoun
 

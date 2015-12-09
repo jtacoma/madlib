@@ -1,15 +1,29 @@
 #include "adjnoun.h"
+
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 
-int main () {
-	struct timespec ts;
-	timespec_get (&ts, TIME_UTC);
-	srand (ts.tv_sec + ts.tv_nsec);
-	int ai = rand() % adjnoun_vocab_len (adjnoun_vocab_type_ADJECTIVE);
-	char const * a = adjnoun_vocab_item (adjnoun_vocab_type_ADJECTIVE, ai);
-	int ni = rand() % adjnoun_vocab_len (adjnoun_vocab_type_NOUN);
-	char const * n = adjnoun_vocab_item (adjnoun_vocab_type_NOUN, ni);
-	printf ("%s %s\n", a, n);
+int main ()
+{
+    adjnoun_rand_seed ();
+
+    enum adjnoun_vocab_type phrase_types [] = {
+        adjnoun_vocab_type_ADJECTIVE,
+        adjnoun_vocab_type_NOUN,
+    };
+
+    const char * phrase = adjnoun_rand_phrase_alloc (
+            ' ',
+            phrase_types,
+            sizeof (phrase_types) / sizeof (*phrase_types));
+
+    if (!phrase)
+    {
+        perror ("adjnoun_rand_phrase_alloc");
+        return -1;
+    }
+
+    printf ("phrase: %s\n", phrase);
+
+    free (phrase);
 }

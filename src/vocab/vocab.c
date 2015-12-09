@@ -1021,15 +1021,21 @@ unsigned adjnoun_vocab_len (enum adjnoun_vocab_type type)
     }
 }
 
-char const * adjnoun_vocab_item (enum adjnoun_vocab_type type, unsigned i)
+char const * adjnoun_vocab_term (enum adjnoun_vocab_type type, unsigned i)
 {
+    char const * const * terms = NULL;
+
     switch (type)
     {
         case adjnoun_vocab_type_ADJECTIVE:
-            return adjectives[i];
+            terms = adjectives;
+            break;
         case adjnoun_vocab_type_NOUN:
-            return nouns[i];
+            terms = nouns;
+            break;
         default:
-            return 0;
+            return "";
     }
+
+    return terms[i%adjnoun_vocab_len(type)];
 }
