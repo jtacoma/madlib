@@ -3,9 +3,9 @@ OBJS = $(SRCS:.c=.o)
 CC = clang-3.8
 CFLAGS = -Iinclude -std=c11 -g -Wall -Wpedantic -Werror
 
-all: adjnoun
+all: madlib
 
-adjnoun: $(OBJS)
+madlib: $(OBJS)
 	$(CC) -o $@ $^
 
 clean:

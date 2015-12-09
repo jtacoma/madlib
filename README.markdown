@@ -1,5 +1,5 @@
-adjnoun
-=======
+madlib
+======
 
 Given a WordNet index file on input, sort words by number of senses (to
 approximate familiarity and frequency) then print the first 500.

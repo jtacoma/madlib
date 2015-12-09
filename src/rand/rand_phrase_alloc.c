@@ -1,12 +1,12 @@
-#include "adjnoun.h"
+#include "madlib.h"
 
 #include <stdlib.h> // rand
 #include <string.h> // strlen, strcpy
 
 char *
-adjnoun_rand_phrase_alloc (
+madlib_rand_phrase_alloc (
     char delim,
-    enum adjnoun_vocab_type const * types,
+    enum madlib_vocab_type const * types,
     unsigned ntypes)
 {
     char const * terms [ntypes];
@@ -16,7 +16,7 @@ adjnoun_rand_phrase_alloc (
     for (unsigned i=0; i<ntypes; ++i)
     {
         unsigned r = rand();
-        terms[i] = adjnoun_vocab_term (types[i], r);
+        terms[i] = madlib_vocab_term (types[i], r);
         lens[i] = strlen (terms[i]);
         len += lens[i];
         if (i) len += 1; // for delim

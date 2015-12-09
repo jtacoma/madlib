@@ -1,7 +1,7 @@
 #include <stdlib.h> // srand
 #include <time.h>   // timespec_get
 
-void adjnoun_rand_seed ()
+void madlib_rand_seed ()
 {
     struct timespec ts;
     timespec_get (&ts, TIME_UTC);
