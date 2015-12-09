@@ -13,9 +13,9 @@ int main ()
     };
 
     char * phrase = adjnoun_rand_phrase_alloc (
-            ' ',
-            phrase_types,
-            sizeof (phrase_types) / sizeof (*phrase_types));
+                        ' ',
+                        phrase_types,
+                        sizeof (phrase_types) / sizeof (*phrase_types));
 
     if (!phrase)
     {

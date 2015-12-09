@@ -5,9 +5,9 @@
 
 char *
 adjnoun_rand_phrase_alloc (
-        char delim,
-        enum adjnoun_vocab_type const * types,
-        unsigned ntypes)
+    char delim,
+    enum adjnoun_vocab_type const * types,
+    unsigned ntypes)
 {
     char const * terms [ntypes];
     unsigned lens [ntypes];
@@ -37,7 +37,7 @@ adjnoun_rand_phrase_alloc (
         strncpy (p, terms[i], lens[i]);
         p += lens[i];
     }
-    
+
     *p = '\0';
 
     return phrase;

@@ -1012,12 +1012,12 @@ unsigned adjnoun_vocab_len (enum adjnoun_vocab_type type)
 {
     switch (type)
     {
-        case adjnoun_vocab_type_ADJECTIVE:
-            return sizeof(adjectives) / sizeof(*adjectives);
-        case adjnoun_vocab_type_NOUN:
-            return sizeof(nouns) / sizeof(*nouns);
-        default:
-            return 0;
+    case adjnoun_vocab_type_ADJECTIVE:
+        return sizeof(adjectives) / sizeof(*adjectives);
+    case adjnoun_vocab_type_NOUN:
+        return sizeof(nouns) / sizeof(*nouns);
+    default:
+        return 0;
     }
 }
 
@@ -1027,14 +1027,14 @@ char const * adjnoun_vocab_term (enum adjnoun_vocab_type type, unsigned i)
 
     switch (type)
     {
-        case adjnoun_vocab_type_ADJECTIVE:
-            terms = adjectives;
-            break;
-        case adjnoun_vocab_type_NOUN:
-            terms = nouns;
-            break;
-        default:
-            return "";
+    case adjnoun_vocab_type_ADJECTIVE:
+        terms = adjectives;
+        break;
+    case adjnoun_vocab_type_NOUN:
+        terms = nouns;
+        break;
+    default:
+        return "";
     }
 
     return terms[i%adjnoun_vocab_len(type)];
