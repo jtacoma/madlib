@@ -12,7 +12,7 @@ int main ()
         adjnoun_vocab_type_NOUN,
     };
 
-    const char * phrase = adjnoun_rand_phrase_alloc (
+    char * phrase = adjnoun_rand_phrase_alloc (
             ' ',
             phrase_types,
             sizeof (phrase_types) / sizeof (*phrase_types));
