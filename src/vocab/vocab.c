@@ -18,7 +18,7 @@
 
 #include "madlib.h"
 
-#include <stddef.h> // size_t
+#include <stddef.h> // NULL
 
 static char const * const adjectives [] = {
     "heavy",

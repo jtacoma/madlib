@@ -16,7 +16,7 @@
  * along with Madlib.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <stdlib.h> // rand, malloc
+#include <stdlib.h> // malloc, rand
 #include <string.h> // strlen, strncpy
 
 #include "madlib.h"

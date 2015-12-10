@@ -16,7 +16,7 @@
  * along with Madlib.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <stdlib.h>
+#include <stdlib.h> // free
 
 #include "madlib.h"
 

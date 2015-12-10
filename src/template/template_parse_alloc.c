@@ -17,7 +17,7 @@
  */
 
 #include <errno.h>
-#include <stdlib.h> // malloc, free
+#include <stdlib.h> // calloc, free, malloc
 #include <string.h> // strlen
 
 #include "madlib.h"
