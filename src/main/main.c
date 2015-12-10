@@ -3,27 +3,44 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main ()
+static const char * default_fmt = "%a %n";
+
+int main (int argc, char const * const * argv)
 {
     madlib_rand_seed ();
 
-    enum madlib_vocab_type phrase_types [] = {
-        madlib_vocab_type_ADJECTIVE,
-        madlib_vocab_type_NOUN,
-    };
-
-    char * phrase = madlib_rand_phrase_alloc (
-                        ' ',
-                        phrase_types,
-                        sizeof (phrase_types) / sizeof (*phrase_types));
-
-    if (!phrase)
+    if (argc > 2)
     {
-        perror ("madlib_rand_phrase_alloc");
+        fprintf (stderr, "usage: madlib [FORMAT]\n");
         return -1;
     }
 
-    printf ("phrase: %s\n", phrase);
+    char const * fmt = default_fmt;
 
-    free (phrase);
+    if (argc == 2)
+    {
+        fmt = argv[1];
+    }
+
+    struct madlib_template * t = madlib_template_parse_alloc (fmt);
+
+    if (!t)
+    {
+        perror ("madlib_template_parse_alloc");
+        return -1;
+    }
+
+    char * phrase = madlib_template_rand_alloc (t);
+
+    if (!phrase)
+    {
+        perror ("madlib_template_rand_alloc");
+        return -1;
+    }
+
+    madlib_template_free (t); t = NULL;
+
+    printf ("%s\n", phrase);
+
+    free (phrase); phrase = NULL;
 }

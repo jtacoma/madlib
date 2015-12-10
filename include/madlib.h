@@ -28,4 +28,20 @@ madlib_rand_phrase_alloc
     , unsigned ntypes
     );
 
+struct madlib_template;
+
+struct madlib_template *
+madlib_template_parse_alloc
+    ( char const * fmt
+    );
+
+void
+madlib_template_free
+    ( struct madlib_template * t
+    );
+
+char * madlib_template_rand_alloc
+    ( struct madlib_template const * t
+    );
+
 #endif //MADLIB_H
