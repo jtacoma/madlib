@@ -29,7 +29,7 @@ madlib_vocab_len
     ( enum madlib_vocab_type type
     );
 
-char const *
+const char *
 madlib_vocab_term
     ( enum madlib_vocab_type type
     , unsigned i
@@ -42,7 +42,7 @@ madlib_rand_seed
 char *
 madlib_rand_phrase_alloc
     ( char delim
-    , enum madlib_vocab_type const * types
+    , const enum madlib_vocab_type * types
     , unsigned ntypes
     );
 
@@ -50,7 +50,7 @@ struct madlib_template;
 
 struct madlib_template *
 madlib_template_parse_alloc
-    ( char const * fmt
+    ( const char * fmt
     );
 
 void
@@ -59,7 +59,7 @@ madlib_template_free
     );
 
 char * madlib_template_rand_alloc
-    ( struct madlib_template const * t
+    ( const struct madlib_template * t
     );
 
 #endif //MADLIB_H

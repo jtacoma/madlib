@@ -23,7 +23,7 @@
 
 static const char * default_fmt = "%a %n";
 
-int main (int argc, char const * const * argv)
+int main (int argc, const char * const * argv)
 {
     madlib_rand_seed ();
 
@@ -33,7 +33,7 @@ int main (int argc, char const * const * argv)
         return -1;
     }
 
-    char const * fmt = default_fmt;
+    const char * fmt = default_fmt;
 
     if (argc == 2)
     {

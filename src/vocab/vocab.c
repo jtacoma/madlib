@@ -20,7 +20,7 @@
 
 #include <stddef.h> // NULL
 
-static char const * const adjectives [] = {
+static const char * const adjectives [] = {
     "heavy",
     "light",
     "clean",
@@ -523,7 +523,7 @@ static char const * const adjectives [] = {
     "attached",
 };
 
-static char const * const nouns [] = {
+static const char * const nouns [] = {
     "point",
     "center",
     "stock",
@@ -1039,9 +1039,9 @@ unsigned madlib_vocab_len (enum madlib_vocab_type type)
     }
 }
 
-char const * madlib_vocab_term (enum madlib_vocab_type type, unsigned i)
+const char * madlib_vocab_term (enum madlib_vocab_type type, unsigned i)
 {
-    char const * const * terms = NULL;
+    const char * const * terms = NULL;
 
     switch (type)
     {

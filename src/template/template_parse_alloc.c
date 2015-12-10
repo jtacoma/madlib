@@ -26,9 +26,9 @@
 
 struct madlib_template *
 madlib_template_parse_alloc (
-    char const * fmt)
+    const char * fmt)
 {
-    unsigned const fmtlen = strlen (fmt);
+    const unsigned fmtlen = strlen (fmt);
 
     // The highest possible density of tokens in the format string can be
     // achieved by interspersing single-character literals with percent-encoded
@@ -55,7 +55,7 @@ madlib_template_parse_alloc (
 
     char * w = t->buffer;
 
-    for (char const * r=fmt; *r!='\0'; ++r)
+    for (const char * r=fmt; *r!='\0'; ++r)
     {
         if (*r=='%')
         {

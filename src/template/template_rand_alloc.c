@@ -24,10 +24,10 @@
 #include "template_impl.h"
 
 char * madlib_template_rand_alloc
-    ( struct madlib_template const * t
+    ( const struct madlib_template * t
     )
 {
-    char const * strs [t->nchunks];
+    const char * strs [t->nchunks];
     unsigned strlens [t->nchunks];
     unsigned len = 0;
 
