@@ -53,6 +53,8 @@ int main (int argc, char const * const * argv)
     if (!phrase)
     {
         perror ("madlib_template_rand_alloc");
+        free (phrase);
+        phrase = NULL;
         return -1;
     }
 
