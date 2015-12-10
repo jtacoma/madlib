@@ -43,33 +43,33 @@ madlib_template_parse_alloc (
         {
             switch (*++r)
             {
-                case '%':
-                    if (t->nchunks==0
+            case '%':
+                if (t->nchunks==0
                         || t->chunks[t->nchunks-1].literal == NULL)
-                    {
-                        t->chunks[t->nchunks++].literal = w;
-                    }
-                    *w++ = '%';
-                    break;
-                case 'a':
-                    *w++ = '\0';
-                    t->chunks[t->nchunks].literal = NULL;
-                    t->chunks[t->nchunks].vocab_type
-                        = madlib_vocab_type_ADJECTIVE;
-                    t->nchunks += 1;
-                    break;
-                case 'n':
-                    *w++ = '\0';
-                    t->chunks[t->nchunks].literal = NULL;
-                    t->chunks[t->nchunks].vocab_type
-                        = madlib_vocab_type_NOUN;
-                    t->nchunks += 1;
-                    break;
-                default:
-                    errno = EINVAL;
-                    free (t->buffer);
-                    free (t);
-                    return NULL;
+                {
+                    t->chunks[t->nchunks++].literal = w;
+                }
+                *w++ = '%';
+                break;
+            case 'a':
+                *w++ = '\0';
+                t->chunks[t->nchunks].literal = NULL;
+                t->chunks[t->nchunks].vocab_type
+                    = madlib_vocab_type_ADJECTIVE;
+                t->nchunks += 1;
+                break;
+            case 'n':
+                *w++ = '\0';
+                t->chunks[t->nchunks].literal = NULL;
+                t->chunks[t->nchunks].vocab_type
+                    = madlib_vocab_type_NOUN;
+                t->nchunks += 1;
+                break;
+            default:
+                errno = EINVAL;
+                free (t->buffer);
+                free (t);
+                return NULL;
             }
         }
         else

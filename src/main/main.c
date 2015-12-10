@@ -38,9 +38,11 @@ int main (int argc, char const * const * argv)
         return -1;
     }
 
-    madlib_template_free (t); t = NULL;
+    madlib_template_free (t);
+    t = NULL;
 
     printf ("%s\n", phrase);
 
-    free (phrase); phrase = NULL;
+    free (phrase);
+    phrase = NULL;
 }
