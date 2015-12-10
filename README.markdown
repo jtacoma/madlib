@@ -1,6 +1,29 @@
 madlib
 ======
 
+Randomly fill in simple madlibs to create random yet plausible sentences.
+
+Format Strings
+--------------
+
+Madlib uses `%` as a special character in its format strings.
+
+ * `%a` means *adjective*
+ * `%n` means *noun*
+ * `%%` means `%`
+
+The default format string is `%a %n`
+
+    $ madlib
+    uniform rendering
+    $ madlib '%a %n, %n!'
+    lively capsule, panel!
+    $ madlib '%%a'
+    %a
+
+Generating Word Lists
+---------------------
+
 Given a WordNet index file on input, sort words by number of senses (to
 approximate familiarity and frequency) then print the first 500.
 
@@ -10,6 +33,17 @@ approximate familiarity and frequency) then print the first 500.
     | head -n 500 \
     | cut -d' ' -f 2
 
-Do this for `index.adj` and `index.noun` from the WordNet 3.0 or 3.1 database
-files, producing `adjectives.txt` and `nouns.txt`.
+This was used to determine the adjectives and nouns currently hard-coded in
+`src/vocab/vocab.c`.
+
+Building
+--------
+
+If your default C compiler supports the C11 standard, there's nothing to it:
+
+    make
+
+Otherwise, you'll have to specify a compiler that works:
+
+    make CC=~/bin/clang-3.8
 
