@@ -1,8 +1,18 @@
-madlib
+Madlib
 ======
 
 A command-line tool to randomly fill in custom madlibs to create random yet
 plausible phrases.
+
+Motivation
+----------
+
+I started this project as an experiment in code organization, particularly in
+defining only one function per C file.
+Since I didn't have anything else in mind, I wasn't sure what to call the
+project.
+The result is a tool that can generate random names for new projects when
+they're still too poorly defined to be given meaningful names.
 
 Format Strings
 --------------
