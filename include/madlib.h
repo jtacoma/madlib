@@ -49,7 +49,7 @@ madlib_rand_phrase_alloc
 struct madlib_template;
 
 struct madlib_template *
-madlib_template_parse_alloc
+madlib_template_alloc
     ( const char * fmt
     );
 

@@ -25,7 +25,7 @@
 #include "template_impl.h"
 
 struct madlib_template *
-madlib_template_parse_alloc (
+madlib_template_alloc (
     const char * fmt)
 {
     const unsigned fmtlen = strlen (fmt);

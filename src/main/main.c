@@ -40,7 +40,7 @@ int main (int argc, const char * const * argv)
         fmt = argv[1];
     }
 
-    struct madlib_template * t = madlib_template_parse_alloc (fmt);
+    struct madlib_template * t = madlib_template_alloc (fmt);
 
     if (!t)
     {
