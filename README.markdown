@@ -1,7 +1,8 @@
 madlib
 ======
 
-Randomly fill in simple madlibs to create random yet plausible sentences.
+A command-line tool to randomly fill in custom madlibs to create random yet
+plausible phrases.
 
 Format Strings
 --------------
