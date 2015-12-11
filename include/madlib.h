@@ -19,9 +19,10 @@
 #ifndef MADLIB_H
 #define MADLIB_H
 
-enum madlib_vocab_type {
-	madlib_vocab_type_ADJECTIVE,
-	madlib_vocab_type_NOUN,
+enum madlib_vocab_type
+{
+    madlib_vocab_type_ADJECTIVE,
+    madlib_vocab_type_NOUN,
 };
 
 unsigned

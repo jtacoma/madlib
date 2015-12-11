@@ -25,8 +25,9 @@
 #include "template_impl.h"
 
 struct madlib_template *
-madlib_template_alloc (
-    const char * fmt)
+madlib_template_alloc
+    ( const char * fmt
+    )
 {
     const unsigned fmtlen = strlen (fmt);
 
@@ -62,8 +63,9 @@ madlib_template_alloc (
             switch (*++r)
             {
             case '%':
-                if (t->nchunks==0
-                        || t->chunks[t->nchunks-1].literal == NULL)
+                if (  t->nchunks==0
+                   || t->chunks[t->nchunks-1].literal == NULL
+                   )
                 {
                     t->chunks[t->nchunks++].literal = w;
                 }
@@ -92,7 +94,9 @@ madlib_template_alloc (
         }
         else
         {
-            if (t->nchunks==0 || t->chunks[t->nchunks-1].literal == NULL)
+            if (  t->nchunks==0
+               || t->chunks[t->nchunks-1].literal == NULL
+               )
             {
                 t->chunks[t->nchunks++].literal = w;
             }
