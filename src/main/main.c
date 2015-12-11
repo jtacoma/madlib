@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void madlib_rand_seed ();
+
 static const char * default_fmt = "%a %n";
 
 int
@@ -29,8 +31,6 @@ main
     , const char * const * argv
     )
 {
-    madlib_rand_seed ();
-
     if (argc > 2)
     {
         fprintf (stderr, "usage: madlib [FORMAT]\n");
@@ -51,6 +51,8 @@ main
         perror ("madlib_template_parse_alloc");
         return -1;
     }
+
+    madlib_rand_seed ();
 
     char * phrase = madlib_template_rand_alloc (t);
 

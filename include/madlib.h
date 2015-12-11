@@ -36,10 +36,6 @@ madlib_vocab_term
     , unsigned i
     );
 
-void
-madlib_rand_seed
-    ();
-
 char *
 madlib_rand_phrase_alloc
     ( char delim
