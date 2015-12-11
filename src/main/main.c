@@ -56,6 +56,9 @@ main
 
     char * phrase = madlib_template_rand_alloc (t);
 
+    madlib_template_free (t);
+    t = NULL;
+
     if (!phrase)
     {
         perror ("madlib_template_rand_alloc");
@@ -63,9 +66,6 @@ main
         phrase = NULL;
         return -1;
     }
-
-    madlib_template_free (t);
-    t = NULL;
 
     printf ("%s\n", phrase);
 
